@@ -1,0 +1,11 @@
+bitcoincli-1.0.0.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
+bitcoincli-1.0.0.dist-info/LICENSE,sha256=QHV-nx5Hh66lHMmcbqRotFQu9OYna2rIWETkt-XDOgo,1530
+bitcoincli-1.0.0.dist-info/METADATA,sha256=8fxe9DvkKnn-Lq80VPkC9vuk_s1LkC_Mpl-12nbTipU,1348
+bitcoincli-1.0.0.dist-info/RECORD,,
+bitcoincli-1.0.0.dist-info/REQUESTED,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bitcoincli-1.0.0.dist-info/WHEEL,sha256=p46_5Uhzqz6AzeSosiOnxK-zmFja1i22CrQCjmYe8ec,92
+bitcoincli-1.0.0.dist-info/top_level.txt,sha256=7fzUbv3RJLMm8JdP7S7LhaE4Q_1WoYGy6_XIHg9yseI,11
+bitcoincli/__init__.py,sha256=cUN8gL8K9JxRUwD1ab37Z5DiUzcVgB0uk45wkiye3oU,62
+bitcoincli/__pycache__/__init__.cpython-39.pyc,,
+bitcoincli/__pycache__/client.cpython-39.pyc,,
+bitcoincli/client.py,sha256=Ol-cjbYnBHuXDAIEX89OMOZzKHtyJ8gvSAYwX28TMrE,2178
