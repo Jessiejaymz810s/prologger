@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" type="image/svg+xml" href="https://openaiapi-site.azureedge.net/public-assets/d/3ebd214d53/favicon.svg"/><link rel="icon" type="image/png" href="https://openaiapi-site.azureedge.net/public-assets/d/3ebd214d53/favicon.png"/><link rel="mask-icon" href="https://openaiapi-site.azureedge.net/public-assets/d/3ebd214d53/mask-icon.svg" color="#000000"/><link rel="preconnect" href="https://cdn.openai.com"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link rel="preconnect" href="https://OWZ3QOIIJA-dsn.algolia.net" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Explore resources, tutorials, API docs, and dynamic examples to get the most out of OpenAI's developer platform."/><meta property="og:title" content="OpenAI Platform"/><meta property="og:image" content="https://platform.openai.com/curl.png"/><meta property="og:description" content="Explore developer resources, tutorials, API docs, and dynamic examples to get the most out of OpenAI's platform."/><meta property="og:url" content="https://platform.openai.com"/><link rel="manifest" href="https://openaiapi-site.azureedge.net/public-assets/d/3ebd214d53/manifest.json"/><title>OpenAI Platform</title><script nonce="ba95fd735294fd33838ad5e997992696" defer="defer" src="https://openaiapi-site.azureedge.net/public-assets/d/3ebd214d53/static/js/main.42383c12.js"></script><link href="https://openaiapi-site.azureedge.net/public-assets/d/3ebd214d53/static/css/main.e3cca4cb.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script nonce="ba95fd735294fd33838ad5e997992696">(function(){var js = "window['__CF$cv$params']={r:'7fb6c6bb5c7232c2',t:'MTY5MjgyOTU3Ny41NTAwMDA='};_cpo=document.createElement('script');_cpo.nonce='ba95fd735294fd33838ad5e997992696',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.nonce = 'ba95fd735294fd33838ad5e997992696';_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script><!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body></html>/home/jessie/Downloads/solana-release/bin/perf-libs/cuda-10.0/api-keys
