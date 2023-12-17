@@ -1,4 +1,4 @@
-# This workflow will build and push a node.js application to an Azure Web App when a commit is pushed to your default branch.
+[![.github/workflows/azure-webapps-node.yml](https://github.com/Jessiejaymz810s/prologger/actions/workflows/azure-webapps-node.yml/badge.svg?branch=main&event=check_run)](https://github.com/Jessiejaymz810s/prologger/actions/workflows/azure-webapps-node.yml)# This workflow will build and push a node.js application to an Azure Web App when a commit is pushed to your default branch.
 #
 # This workflow assumes you have already created the target Azure App Service web app.
 # For instructions see https://docs.microsoft.com/en-us/azure/app-service/quickstart-nodejs?tabs=linux&pivots=development-environment-cli
