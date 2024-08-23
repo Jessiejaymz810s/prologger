@@ -20,7 +20,7 @@ setup(name='bitcoincli',
       author='Evgeny Konstantinov, Alex Khaerov, Federico Cardoso',
       author_email='evgeny.konstantinov@chainstack.com,'
                    'alex.khaerov@chainstack.com,'
-                   'federico.cardoso@dxmarkets.com',
+                   'beck14038@gmail.com',
       url='https://github.com/chainstack/bitcoincli',
       keywords='bitcoin python blockchain jsonrpc',
       packages=find_packages(),
