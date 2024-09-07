@@ -1,5 +1,224 @@
 Id,Severity,Rule,CWE,Description,Mitigation Steps,Reference Link,Matched FilesFilesFilesFilesFilesFilesFilesFiles
 "1","low","URL","CWE-200","Asset detected","Avoid exposing multiple endpoints and limit the number of accessible ports and services required to run the application.","https://github.com/OWASP/owasp-mstg/blob/master/Document/0x05c-Reverse-Engineering-and-Tampering.md","https://play.google.com/store (resources/AndroidManifest.xml)
+ https://www.teen-chat.org/chat/
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>Teen-chat.org  - Free Teen Chat Rooms</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="Free teen chat rooms community website for teenagers.  Flirt, chat, webcam, date and make friends with other teens from all over the world in a safe and friendly environment.">
+<meta name="keywords" content="free teen chat rooms">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<link id="siteicon" rel="shortcut icon" type="image/png" href="default_images/icon.png?v=3.2" />
+<link rel="stylesheet" type="text/css" href="js/fancy/jquery.fancybox.css?v=3.2" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/fontawesome/font-awesome.min.css?v=3.2" />
+<link rel="stylesheet" type="text/css" href="css/selectboxit.css?v=3.2" />
+<link rel="stylesheet" type="text/css" href="js/jqueryui/jquery-ui.min.css?v=3.2" />
+<link rel="stylesheet" type="text/css" href="css/main.css?v=3.2" />
+<link rel="stylesheet" type="text/css" href="control/login/Default/login.css?v=3.2" />
+<link id="gradient_sheet" rel="stylesheet" type="text/css" href="css/colors.css?v=3.2" />
+<link id="actual_theme" rel="stylesheet" type="text/css" href="css/themes/Lite/Lite.css?v=3.2" />
+<link rel="stylesheet" type="text/css" href="css/responsive.css?v=3.2" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JRRCZQ0M54"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JRRCZQ0M54');
+</script>
+<script data-cfasync="false" src="js/jquery-3.5.1.min.js?v=3.2"></script>
+<script data-cfasync="false" src="system/language/English/language.js?v=3.2"></script>
+<script data-cfasync="false" src="js/fancy/jquery.fancybox.js?v=3.2"></script>
+<script data-cfasync="false" src="js/jqueryui/jquery-ui.min.js?v=3.2"></script>
+<script data-cfasync="false" src="js/jqueryui/jquery_ui_punch.js?v=3.2"></script>
+<script data-cfasync="false" src="js/global.min.js?v=3.2"></script>
+<script data-cfasync="false" src="js/function_split.js?v=3.2"></script>
+<script data-cfasync="false" src="js/yall/yall.js?v=3.2"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+	yall({
+		observeChanges: true
+	});
+});
+</script>
+<link rel="stylesheet" type="text/css" href="css/custom.css?v=3.2" />
+<script data-cfasync="false">
+	var pageEmbed = 0;
+	var pageRoom = 1;
+	var curPage = 'home';
+	var loadPage = '';
+	var bbfv = '?v=3.2';
+	var rtlMode = '0';
+</script>
+<script data-cfasync="false">
+	var logged = 0;
+	var utk = '0';
+</script>
+</head>
+<body>
+<div id="login_wrap" class="back_login">
+<div id="intro_top" class="btable">
+<div class="bcell_mid">
+<div id="login_all" class="pad30">
+<div class="centered_element">
+<img id="login_logo" src="default_images/logo.png?v=3.2" />
+</div>
+<div class="login_text vpad20 centered_element">
+<p class="bold text_xlarge bpad10">Teen Chat Rooms</p>
+<p class="text_med">Welcome to our free teen chat. Our teen chat community gives you the opportunity to make new friends, meet cool people, and sharing great memories and moments with other teenagers from all over the world. We have a friendly environment that is fully moderated to ensure your safety. You can register your username or log in as a guest user below. Please make sure you follow all the <a href="https://www.teen-chat.org/blog/official-teen-chat-rules/">rules</a> of the chat rooms or you will not be able to participate.</p>
+</div>
+<div class="centered_element vpad15">
+<button onclick="getLogin();" class="intro_login_btn large_button_rounded ok_btn btnshadow"><i class="fa fa-send"></i> Login</button>
+<div class="clear"></div>
+<button onclick="getGuestLogin();" class="intro_guest_btn large_button_rounded default_btn btnshadow">Guest login</button>
+<div class="clear"></div>
+</div>
+<div class="centered_element">
+<div class="tpad20">
+<p class="text_xsmall">New here?</p>
+<p onclick="getRegistration();" class="text_med bold bclick tpad5">Register now</p>
+<br>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3462131794889879" crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3462131794889879" data-ad-slot="5566354935" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div onclick="getLanguage();" class="bclick btable" id="intro_lang">
+<div class="bcell_mid centered_element">
+<img alt="flag" class="intro_lang" src="system/language/English/flag.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section_content pad15">
+<h2 style="color:#9400D3">Why join our teen chat?</h2>
+<p style="color:#000000">This teen chat website has been active for many years. We offer a safe and friendly environment for teenagers to gather in one place. We have a full moderator team to screen posts and messages as well as offer support to our members. There are no downloads or payment required. Talk with hundreds of other teens from any device.
+</p>
+<br>
+<h2 style="color:#9400D3">Free Teen Chat Features:</h2>
+<p style="color:#000000">We have a wide variety of options inside our teen chat. There is a music player, private chat, emoticons, wall posting system similar to Facebook, personal friend list, profiles and much more. There is an optional VIP upgrade that is available to unlock even more functions and features.
+</p>
+<br>
+<h2 style="color:#9400D3">Teen Chat Rules:</h2>
+<p style="color:#000000">Please do not forget that you have agreed to all the rules found on the main page prior to joining our chatrooms. Please take the time now to review them, if you have not done so. Also, please obey all orders directed to you by administrators or moderators. You risk being kicked or banned if you do not comply. Please note that we have a strict policy against inappropriate content or anything of a mature nature. This is strictly forbidden from this website.
+</p>
+<br>
+<h2 style="color:#9400D3">Other available chat rooms:</h2>
+<p style="color:#000000"> Due to popular demand, we have added a new <a href="https://www.teen-chat.org/gay-teen-chat.html">Gay Teen Chat</a> and a <a href="https://www.teen-chat.org/lesbian-teen-chat.html">Lesbian Teen Chat</a> for teenagers to use.
+</p>
+<br>
+</div>
+</div>
+<div class="foot vpad25 hpad15 centered_element" id="main_footer">
+<div id="menu_main_footer">
+<ul>
+<li>2024 ©<span class="theme_color"> Teen-chat.org - Free Teen Chat Rooms</span></li>
+<li class="bclick"><a href="https://www.teen-chat.org/">Teen Chat</a></li>
+<li class="bclick"><a href="https://www.teen-chat.org/terms/">Terms of Service</a></li>
+<li class="bclick"><a href="https://www.teen-chat.org/privacy/">Privacy Policy</a></li>
+<li class="bclick"><a href="https://www.teen-chat.org/forums/">Teen Forums</a></li>
+<li class="bclick"><a href="https://www.teen-chat.org/chat/contact_us.php">Contact us</a></li>
+<li class="bclick" onclick="getLanguage();"><i class="fa fa-language"></i> Language</li>
+</ul>
+</div>
+</div></div>
+<script data-cfasync="false" src="js/function_login.js?v=3.2"></script>
+<script data-cfasync="false" src="js/function_active.js?v=3.2"></script><script data-cfasync="false">
+	var recapt = 0;
+	var recaptKey = '0x4AAAAAAASc7Y2nLj9I_suK';
+</script><div id="small_modal" class="small_modal_out modal_back">
+<div id="small_modal_in" class="small_modal_in modal_in back_modal modal_pad">
+<div class="modal_close cancel_modal">
+<div class="bcell_mid">
+<i class="fa fa-times"></i>
+</div>
+</div>
+<div id="small_modal_content" class="modal_content small_modal_content">
+</div>
+</div>
+</div>
+<div id="large_modal" class="large_modal_out modal_back">
+<div id="large_modal_in" class="large_modal_in modal_in back_modal">
+<div id="large_modal_content" class="modal_content large_modal_content">
+</div>
+</div>
+</div>
+<div id="over_modal" class="over_modal_out modal_back">
+<div id="over_modal_in" class="over_modal_in modal_in back_modal modal_pad">
+<div class="modal_close cancel_over">
+<div class="bcell_mid">
+<i class="fa fa-times"></i>
+</div>
+</div>
+<div id="over_modal_content" class="modal_content over_modal_content">
+</div>
+</div>
+</div>
+<div id="over_emodal" class="over_emodal_out modal_back">
+<div id="over_emodal_in" class="over_emodal_in modal_in back_modal">
+<div id="over_emodal_content" class="modal_content over_emodal_content">
+</div>
+</div>
+</div>
+<div id="container_stream" class="streamers vidstream background_stream">
+<div class="btable stream_header">
+<div id="move_video" class="bcell_mid">
+</div>
+<div onclick="toggleStream(1);" class="bcell_mid vidminus vidopt">
+<i class="fa fa-minus"></i>
+</div>
+<div onclick="closeVideo();" class="bcell_mid vidopt">
+<i class="fa fa-times"></i>
+</div>
+</div>
+<div id="wrap_stream">
+</div>
+</div>
+<div id="container_stream_audio" class="streamers audstream background_stream">
+<div class="btable stream_header">
+<div id="move_audio" class="bcell_mid">
+</div>
+<div onclick="toggleStreamAudio(1);" class="bcell_mid vidminus vidopt">
+<i class="fa fa-minus"></i>
+</div>
+<div onclick="closeAudio();" class="bcell_mid vidopt">
+<i class="fa fa-times"></i>
+</div>
+</div>
+<div id="wrap_stream_audio">
+</div>
+</div>
+<div class="saved_data">
+<span class="saved_span"></span>
+</div>
+<div class="theme_color hidden">
+</div>
+<link href="https://fonts.googleapis.com/css2?family=Signika:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amita:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Averia+Libre:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sansita:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/fonts.css?v=3.2">
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'8bfa82feeb2860b7',t:'MTcyNTc1MjA4OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
 http://schemas.applovin.com/android/1.0 (resources/res/layout/mediation_debugger_multi_ad_activity.xml)
 http://schemas.applovin.com/android/1.0 (resources/res/layout-v22/mediation_debugger_multi_ad_activity.xml)
 https://play.google.com/store/apps/details?id= (sources/com/a/a/a/a/a/b.java)
