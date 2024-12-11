@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!-- saved from url=(0112)https://fc.fittentech.com/codeuser/fb_sign_in?source=microsoft&client_token=c180ae76-1e37-4ed2-a6b4-b310e8093fb7 -->
+<html class="mdl-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>Fitten Code Login</title>
+        <script src="./Fitten Code Login_files/cb=gapi.loaded_0" async=""></script><script src="./Fitten Code Login_files/firebase-app-compat.js"></script>
+        <script src="./Fitten Code Login_files/firebase-auth-compat.js"></script>
+        <script src="./Fitten Code Login_files/firebase-ui-auth.js"></script>
+        <link type="text/css" rel="stylesheet" href="./Fitten Code Login_files/firebase-ui-auth.css">
+        <!-- <script src="config.js"></script> -->
+        <!-- <script src="dist/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="dist/firebaseui.css" /> -->
+        <meta name="referrer" content="strict-origin-when-cross-origin"> 
+        <style>
+        body {
+            margin: 0;
+        }
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript">
+        var config = {
+            apiKey: "AIzaSyCGfqhudwR79flyZxw1hV5lsu0CtiMlqhc",
+            authDomain: "fitten-code.firebaseapp.com",
+            // authDomain: "fb.fitten.ai",
+        };
+        firebase.initializeApp(config);
+
+
+        /**
+        * @param {string} queryString The full query string.
+        * @return {!Object<string, string>} The parsed query parameters.
+        */
+        function parseQueryString(queryString) {
+            // Remove first character if it is ? or #.
+            if (queryString.length &&
+                (queryString.charAt(0) == '#' || queryString.charAt(0) == '?')) {
+            queryString = queryString.substring(1);
+            }
+            var config = {};
+            var pairs = queryString.split('&');
+            for (var i = 0; i < pairs.length; i++) {
+            var pair = pairs[i].split('=');
+            if (pair.length == 2) {
+                config[pair[0]] = pair[1];
+            }
+            }
+            return config;
+        }
+
+        // Google OAuth Client ID, needed to support One-tap sign-up.
+        // Set to null if One-tap sign-up is not supported.
+        var CLIENT_ID =
+            '68382558492-g399rpl1f27n47n1n3dlesaqd21em1e4.apps.googleusercontent.com';
+        //var CLIENT_ID =
+        //    'YOUR_OAUTH_CLIENT_ID';
+
+        function getQueryParam(param) {
+            const params = new URLSearchParams(window.location.search); // 创建URLSearchParams实例
+            return params.get(param); // 直接获取指定的查询参数
+        }
+        /**
+        * @return {boolean} The admin restricted operation status from the configuration.
+        */
+        function getAdminRestrictedOperationStatus() {
+            var config = parseQueryString(location.hash);
+            return config['adminRestrictedOperationStatus'] === 'true';
+        }
+
+        client_token = getQueryParam("client_token");
+        if (client_token == null || client_token == undefined) {
+            client_token = "";
+        }
+        // FirebaseUI config.
+        var uiConfig = {
+            // Url to redirect to after a successful sign-in.
+            // 'signInSuccessUrl': '/fb_sign_in?source=microsoft&client_token=' + client_token,
+            'callbacks': {
+            'signInSuccess': function(user, credential, redirectUrl) {
+                id_token = user['multiFactor']['user']['accessToken'];
+                console.log(redirectUrl);
+                console.log(window.location.href);
+                if (id_token == null || id_token == undefined || id_token == "" || client_token == null || client_token == undefined || client_token == "") {
+                    alert('Login failed, please try again');
+                    window.location.href = window.location.href;
+                } else {
+                    login_url = window.location.href.split('/fb_sign_in')[0] + "/firebase_login?client_token="+client_token+"&id_token="+id_token;
+                    console.log(login_url);
+                    // var httpRequest = new XMLHttpRequest();
+                    // httpRequest.open('GET', login_url, true);
+                    // httpRequest.send();
+                    // alert('登录成功，请关闭网页，返回到Fitten Code插件');
+                    let func = async () => {
+                        try {
+                            const response = await fetch(login_url, { method: 'GET' });
+                            if (response.ok) {
+                                alert('Login success, this page will be closed');
+                                // change class=header text to Login Success
+                                document.querySelector('.header').innerHTML = 'Login Success, Please Close This Page';
+                                window.close();
+                            } else {
+                                console.error('Login failed');
+                                alert('Login failed, please try again');
+                                window.location.href = window.location.href;
+                            }
+                        } catch (error) {
+                            console.error('An error occurred:', error);
+                            alert('Login failed, please try again');
+                            window.location.href = window.location.href;
+                        }
+                    }
+                    func();
+                }
+                // window.location.href = window.location.href;
+                return false;
+            }
+            },
+            'signInFlow': 'popup',
+            'signInOptions': [
+            {
+                provider: 'microsoft.com',
+                loginHintKey: 'login_hint'
+            }
+            ],
+            // Terms of service url.
+            'tosUrl': 'https://www.google.com',
+            'credentialHelper': CLIENT_ID && CLIENT_ID != 'YOUR_OAUTH_CLIENT_ID' && false ?
+                firebaseui.auth.CredentialHelper.GOOGLE_YOLO :
+                firebaseui.auth.CredentialHelper.NONE,
+            'adminRestrictedOperation': {
+            status: getAdminRestrictedOperationStatus()
+            }
+        };
+
+        // Initialize the FirebaseUI Widget using Firebase.
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        // The start method will wait until the DOM is loaded to include the FirebaseUI sign-in widget
+        // within the element corresponding to the selector specified.
+        ui.start('#firebaseui-auth-container', uiConfig);
+        </script>
+        
+        <style>
+            body {
+                font-family: Arial, sans-serif; /* 设置字体 */
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center; /* 水平居中 */
+                align-items: center; /* 垂直居中 */
+                height: 100vh; /* 全屏高度 */
+            }
+            .header {
+                font-size: 24px; /* 字体大小 */
+                margin-bottom: 20px; /* 标题与下方内容的距离 */
+            }
+        </style>
+    <script src="./Fitten Code Login_files/api.js" type="text/javascript" charset="UTF-8" gapi_processed="true"></script></head>
+    <body>
+        <center>
+            <div class="header">Fitten Code Sign In</div>
+            <div id="firebaseui-auth-container" lang="en"><div class="firebaseui-container firebaseui-page-provider-sign-in firebaseui-id-page-provider-sign-in firebaseui-use-spinner"><div class="firebaseui-card-content"><form onsubmit="return false;"><ul class="firebaseui-idp-list"><li class="firebaseui-list-item"><button class="firebaseui-idp-button mdl-button mdl-js-button mdl-button--raised firebaseui-idp-generic firebaseui-id-idp-button" data-provider-id="microsoft.com" style="background-color:#2F2F2F" data-upgraded=",MaterialButton"><span class="firebaseui-idp-icon-wrapper"><img class="firebaseui-idp-icon" alt="" src="./Fitten Code Login_files/microsoft.svg"></span><span class="firebaseui-idp-text firebaseui-idp-text-long">Sign in with Microsoft</span><span class="firebaseui-idp-text firebaseui-idp-text-short">Microsoft</span></button></li></ul></form></div><div class="firebaseui-card-footer firebaseui-provider-sign-in-footer"></div><div class="firebaseui-info-bar firebaseui-id-info-bar"><p class="firebaseui-info-bar-message">Firebase: Remote site returned malformed response that cannot be parsed for hotmail.com for USER_INFO (auth/invalid-credential).&nbsp;&nbsp;<a href="javascript:void(0)" class="firebaseui-link firebaseui-id-dismiss-info-bar">Dismiss</a></p></div></div></div>
+        </center>
+    
+    
+
+    <iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" tabindex="-1" vspace="0" width="100%" aria-hidden="true" id="I0_1733957984938" name="I0_1733957984938" src="./Fitten Code Login_files/iframe.html" style="position: absolute; top: -100px; width: 1px; height: 1px;"></iframe></body></html>
