@@ -2,5 +2,6 @@
     "githubPullRequests.ignoredPullRequestBranches": [
         "main",
         "main"
-    ]
+    ],
+    "cmake.options.statusBarVisibility": "visible"
 }
