@@ -3,5 +3,6 @@
         "main",
         "main"
     ],
-    "cmake.options.statusBarVisibility": "visible"
+    "cmake.options.statusBarVisibility": "visible",
+    "dbt.dbtIntegration": "cloud"
 }
