@@ -4,5 +4,6 @@
         "main"
     ],
     "cmake.options.statusBarVisibility": "visible",
-    "dbt.dbtIntegration": "cloud"
+    "dbt.dbtIntegration": "cloud",
+    "gitlens.statusBar.format": "${author}, ${agoOrDate}${' via  'pullRequest}"
 }
