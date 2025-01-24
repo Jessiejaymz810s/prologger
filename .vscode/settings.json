@@ -2,5 +2,8 @@
     "githubPullRequests.ignoredPullRequestBranches": [
         "main",
         "main"
-    ]
+    ],
+    "git.ignoreLimitWarning": true,
+    "cmake.options.statusBarVisibility": "visible",
+    "cmake.useCMakePresets": "always"
 }
