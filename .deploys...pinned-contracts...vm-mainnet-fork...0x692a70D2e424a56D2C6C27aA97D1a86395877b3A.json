@@ -1,0 +1,27 @@
+{
+  "name": "TestsAccounts",
+  "address": "0x692a70D2e424a56D2C6C27aA97D1a86395877b3A",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "getAccount",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "filePath": "6f832cac-1727237894140/.deps/remix-tests/remix_accounts.sol",
+  "pinnedAt": 1727240958513
+}
