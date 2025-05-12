@@ -5,6 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "cobol",
+            "request": "launch",
+            "name": "COBOL (native)",
+            "program": "${workspaceFolder}/<insert-program-name-here>",
+            "cwd": "${workspaceFolder}",
+            "stopOnEntry": true
+        },
+        {
             "request": "launch",
             "name": "Launch Program",
             "type": "node",
