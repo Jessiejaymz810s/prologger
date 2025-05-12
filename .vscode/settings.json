@@ -5,5 +5,7 @@
     ],
     "cmake.options.statusBarVisibility": "visible",
     "dbt.dbtIntegration": "cloud",
-    "gitlens.statusBar.format": "${author}, ${agoOrDate}${' via  'pullRequest}"
+    "gitlens.statusBar.format": "${author}, ${agoOrDate}${' via  'pullRequest}",
+    "yaml.suggest.parentSkeletonSelectedFirst": true,
+    "yaml.trace.server": "messages"
 }
