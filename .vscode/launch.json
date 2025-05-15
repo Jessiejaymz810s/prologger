@@ -7,6 +7,17 @@
         {
             "type": "cobol",
             "request": "launch",
+            "name": "COBOL (native): remote",
+            "program": "<insert-program-name-here>",
+            "remoteDebug": {
+                "machine": "Please enter the name or IP address of the machine runing cobdebugremote.",
+                "port": 0
+            },
+            "stopOnEntry": true
+        },
+        {
+            "type": "cobol",
+            "request": "launch",
             "name": "COBOL (native)",
             "program": "${workspaceFolder}/<insert-program-name-here>",
             "cwd": "${workspaceFolder}",
