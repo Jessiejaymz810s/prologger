@@ -1,10 +1,6 @@
-{
   "address" : "0x29efb6a93c565efff225654c831bb58beb2bcbfd",
-  "crypto" : {
     "cipher" : "aes-128-ctr",
-    "cipherparams" : {
       "iv" : "0x5a6c3f510ac68dc28178212dcc4ca900"
-    },
     "ciphertext" : "0xf9ccc1954cbedd397581d57a9ef3ccc9a0d7834cf24013a55442ad5a866fc8181ad930c3ec28fca2307f614ba14396cb1331b731d178362e85738a97dea6550d6c59c08f4a46aaa404053007c5436d6e",
     "kdf" : "pbkdf2",
     "kdfparams" : {
@@ -14,11 +10,7 @@
       "salt" : "0x97a33e6802cc245a39f9ba886a54ee38"
     },
     "mac" : "0x8a48a1c560701aff2f66903938a6cc1319c9995d7dbd2fe5360b57fe738bc110"
-  },
-  "id" : "97a25bbf670f8afbb95a7812254199a1349d816dd9e84b3f18579f11d3f39cb1",
-  "redditBackupData" : "eyJ2ZXJzaW9uIjoxLCJlbmNyeXB0ZWRCYWNrdXBEYXRhIjoiR0lIVVFNbnR6UWduQzRVcXdqRm5acXlaazRXTXZRL1B5TWtEN1Q5Wk5LTnB5Rys4S2h2M2RHVGFlWGtGdEZPdGRKWFMveHVTR0g4L3kwNUFtb3ZsUDhSWG92Z09vTVhWb09QSGorZklOMTRvSU5XbVRoUWpPMDVnODQzaE9qOFYwMmNYelhKMUxxaG5lWXlTVGZEM3ZtOGcxSVM1WUxwQk1HZnlXU2cxdjRmbTRoSWIvY0k1aWltd0x6Yk5MZTkvQU91ZllvOVVDT0o4T0ZJYUdVVU9xMnpqcjhRUEJkNFQ1alBac1B1UVZlaVJXaCsxb1gzTTVPcm1NSWM9In0=",
-  "version" : 3
-}			52586.txtBEGIN:VCARD{
+  "id" : "97a25bbf670f8afbb95a7812254199a1349d816dd9e84b3f18579f11d3f39cb1"
 VERSION:3.0
 PRODID:-//Apple Inc.//iPhone OS 18.4.1//EN
 N:Cook;Daniel;;;
