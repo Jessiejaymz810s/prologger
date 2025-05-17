@@ -1,0 +1,2 @@
+Resource,Resource Type,Project Id,Folders,Organization,Policy,Explanation
+"//cloudresourcemanager.googleapis.com/projects/poetic-primer-398910","cloudresourcemanager.Project","poetic-primer-398910","[]","","{version:0,bindings:[{role:roles/owner,members:[user:beck14038@gmail.com],condition:null}],auditConfigs:[],etag:}",
