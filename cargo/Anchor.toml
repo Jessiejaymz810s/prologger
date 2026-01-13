@@ -1,16 +1,14 @@
-[features]
-seeds = false
-skip-lint = false
+
 
 [programs.localnet]
-cargo = "6fB9WUia2btTZagzbcrXvoga5VXYJGqa7J8P2rFjEb5b"
+my_program = "Anchor.toml"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "Localnet"
-wallet = "/home/jessie/.config/solana/id.json"
+cluster = "http://127.0.0.1:8899"
+wallet = "~/.config/solana/id.json"
 
 [scripts]
 test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
