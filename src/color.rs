@@ -43,7 +43,13 @@ pub(crate) fn level_color(level: log::Level) -> AnsiColor {
 /// Colorize a string with the given ANSI color.
 pub(crate) fn colorize(text: &str, color: AnsiColor, bold: bool) -> String {
     if bold {
-        format!("{}{}{}{}", AnsiColor::BOLD, color.code, text, AnsiColor::RESET)
+        format!(
+            "{}{}{}{}",
+            AnsiColor::BOLD,
+            color.code,
+            text,
+            AnsiColor::RESET
+        )
     } else {
         format!("{}{}{}", color.code, text, AnsiColor::RESET)
     }
@@ -88,5 +94,3 @@ impl ColorMode {
         }
     }
 }
-
-

@@ -1,11 +1,14 @@
 [package]
 name = "prologger"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
+rust-version = "1.63"
 authors = ["Jessiejaymz810s"]
 description = "A production-grade, ergonomic Rust logging library with colored output, file rotation, and structured formatting."
 license = "MIT"
 repository = "https://github.com/Jessiejaymz810s/prologger"
+documentation = "https://docs.rs/prologger"
+homepage = "https://github.com/Jessiejaymz810s/prologger"
 keywords = ["logging", "logger", "log", "structured", "color"]
 categories = ["development-tools::debugging"]
 readme = "README.md"
@@ -14,6 +17,10 @@ readme = "README.md"
 log = { version = "0.4", features = ["std"] }
 serde = { version = "1.0", features = ["derive"], optional = true }
 serde_json = { version = "1.0", optional = true }
+
+[dev-dependencies]
+criterion = { version = "0.5", features = ["html_reports"] }
+tempfile = "3"
 
 [features]
 default = ["color", "file"]
@@ -35,3 +42,11 @@ required-features = ["file"]
 name = "json_output"
 path = "examples/json_output.rs"
 required-features = ["json"]
+
+[[example]]
+name = "env_config"
+path = "examples/env_config.rs"
+
+[[bench]]
+name = "logging_bench"
+harness = false

@@ -3,10 +3,10 @@
 //! Formatters control how log records are serialized into strings
 //! before being written to a sink.
 
-pub mod pretty;
 pub mod compact;
 #[cfg(feature = "json")]
 pub mod json;
+pub mod pretty;
 
 use log::Record;
 

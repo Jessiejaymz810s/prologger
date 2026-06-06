@@ -40,8 +40,7 @@ impl ProLogger {
     /// Returns `SetLoggerError` if a global logger has already been set.
     pub fn init(self) -> Result<(), SetLoggerError> {
         let max_level = self.filter.global_level();
-        log::set_boxed_logger(Box::new(self))
-            .map(|()| log::set_max_level(max_level))
+        log::set_boxed_logger(Box::new(self)).map(|()| log::set_max_level(max_level))
     }
 }
 

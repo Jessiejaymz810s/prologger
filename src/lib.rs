@@ -52,6 +52,7 @@
 pub mod builder;
 #[cfg(feature = "color")]
 pub mod color;
+pub mod env;
 pub mod filter;
 pub mod formatter;
 pub mod logger;
@@ -64,6 +65,7 @@ pub mod sink;
 pub use builder::ProLoggerBuilder;
 #[cfg(feature = "color")]
 pub use color::ColorMode;
+pub use env::{EnvConfig, EnvParseError};
 pub use formatter::FormatterType;
 pub use logger::ProLogger;
 #[cfg(feature = "file")]
@@ -127,15 +129,50 @@ pub fn init_with_level(level: LevelFilter) {
 /// Returns `Ok(())` on success, or `Err` if a logger was already set.
 /// Use this instead of [`init`] when you want to handle the error gracefully.
 pub fn try_init() -> Result<(), log::SetLoggerError> {
-    ProLoggerBuilder::new()
-        .with_console_default()
-        .init()
+    ProLoggerBuilder::new().with_console_default().init()
 }
 
 /// Tries to initialize prologger with the given maximum log level.
 pub fn try_init_with_level(level: LevelFilter) -> Result<(), log::SetLoggerError> {
     ProLoggerBuilder::new()
         .with_level(level)
+        .with_console_default()
+        .init()
+}
+
+/// Initializes prologger using the `RUST_LOG` environment variable.
+///
+/// This reads the `RUST_LOG` env var for level configuration:
+/// - `RUST_LOG=debug` — sets global level to debug
+/// - `RUST_LOG=warn,my_app=debug` — warn globally, debug for my_app
+///
+/// If `RUST_LOG` is not set, defaults to `Info` level.
+///
+/// # Panics
+///
+/// Panics if `RUST_LOG` contains invalid syntax or if a logger is already set.
+///
+/// # Example
+///
+/// ```rust,no_run
+/// // Set RUST_LOG=debug before running
+/// prologger::init_from_env();
+/// log::debug!("This shows when RUST_LOG=debug");
+/// ```
+pub fn init_from_env() {
+    ProLoggerBuilder::new()
+        .with_env()
+        .with_console_default()
+        .init()
+        .expect("prologger: failed to initialize logger (was a logger already set?)")
+}
+
+/// Tries to initialize prologger using the `RUST_LOG` environment variable.
+///
+/// Non-panicking version of [`init_from_env`].
+pub fn try_init_from_env() -> Result<(), log::SetLoggerError> {
+    ProLoggerBuilder::new()
+        .with_env()
         .with_console_default()
         .init()
 }

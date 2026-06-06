@@ -3,6 +3,7 @@
 //! Provides a fluent API for configuring all aspects of the logger
 //! before building and initializing it.
 
+use crate::env::EnvConfig;
 use crate::filter::Filter;
 use crate::formatter::{self, Format, FormatterType};
 use crate::logger::ProLogger;
@@ -81,6 +82,72 @@ impl ProLoggerBuilder {
     /// `"hyper::client"`, `"hyper::server"`, etc.
     pub fn with_module_filter(mut self, module: &str, level: LevelFilter) -> Self {
         self.module_filters.push((module.to_string(), level));
+        self
+    }
+
+    /// Configures the logger from the `RUST_LOG` environment variable.
+    ///
+    /// If `RUST_LOG` is set, its value overrides the global level and adds
+    /// any module-specific filters. If not set, the builder is unchanged.
+    ///
+    /// # Format
+    ///
+    /// ```text
+    /// RUST_LOG=debug                          # Global level
+    /// RUST_LOG=warn,my_app=debug,hyper=error  # Global + module overrides
+    /// ```
+    ///
+    /// # Panics
+    ///
+    /// Panics if the environment variable contains invalid syntax.
+    /// Use [`with_env_var_opt`](Self::with_env_var_opt) for non-panicking behavior.
+    pub fn with_env(self) -> Self {
+        self.with_env_var(EnvConfig::DEFAULT_ENV_VAR)
+    }
+
+    /// Configures the logger from a custom environment variable.
+    ///
+    /// Works the same as [`with_env`](Self::with_env) but reads from the
+    /// specified variable name instead of `RUST_LOG`.
+    ///
+    /// # Panics
+    ///
+    /// Panics if the environment variable contains invalid syntax.
+    pub fn with_env_var(self, var_name: &str) -> Self {
+        match EnvConfig::from_env(var_name) {
+            Some(Ok(config)) => self.apply_env_config(config),
+            Some(Err(e)) => panic!("prologger: failed to parse {}: {}", var_name, e),
+            None => self, // Env var not set — no-op
+        }
+    }
+
+    /// Configures the logger from the `RUST_LOG` environment variable,
+    /// returning an error instead of panicking on invalid syntax.
+    ///
+    /// Returns `Ok(self)` if the variable is not set or was parsed successfully.
+    /// Returns `Err(...)` if the variable contains invalid syntax.
+    pub fn with_env_opt(self) -> Result<Self, crate::env::EnvParseError> {
+        self.with_env_var_opt(EnvConfig::DEFAULT_ENV_VAR)
+    }
+
+    /// Configures the logger from a custom environment variable,
+    /// returning an error instead of panicking on invalid syntax.
+    pub fn with_env_var_opt(self, var_name: &str) -> Result<Self, crate::env::EnvParseError> {
+        match EnvConfig::from_env(var_name) {
+            Some(Ok(config)) => Ok(self.apply_env_config(config)),
+            Some(Err(e)) => Err(e),
+            None => Ok(self),
+        }
+    }
+
+    /// Applies a parsed env config to this builder.
+    fn apply_env_config(mut self, config: EnvConfig) -> Self {
+        if let Some(level) = config.global_level() {
+            self.level = level;
+        }
+        for (module, level) in config.module_levels() {
+            self.module_filters.push((module.clone(), *level));
+        }
         self
     }
 

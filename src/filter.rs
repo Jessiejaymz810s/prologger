@@ -101,10 +101,7 @@ mod tests {
     use log::Level;
 
     fn metadata(level: Level, target: &str) -> log::Metadata<'_> {
-        log::Metadata::builder()
-            .level(level)
-            .target(target)
-            .build()
+        log::Metadata::builder().level(level).target(target).build()
     }
 
     #[test]
@@ -118,8 +115,7 @@ mod tests {
 
     #[test]
     fn test_module_override() {
-        let filter = Filter::new(LevelFilter::Info)
-            .with_module("noisy_lib", LevelFilter::Warn);
+        let filter = Filter::new(LevelFilter::Info).with_module("noisy_lib", LevelFilter::Warn);
 
         // Normal module uses global level
         assert!(filter.is_enabled(&metadata(Level::Info, "my_app")));
