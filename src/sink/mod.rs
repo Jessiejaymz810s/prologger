@@ -11,6 +11,8 @@ pub mod file;
 pub mod async_sink;
 #[cfg(feature = "syslog")]
 pub mod syslog;
+#[cfg(feature = "x_grok")]
+pub mod x_grok;
 
 use crate::formatter::Format;
 use log::Record;

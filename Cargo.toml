@@ -21,6 +21,7 @@ syslog = { version = "6.1", optional = true }
 tracing = { version = "0.1", optional = true }
 tracing-core = { version = "0.1", optional = true }
 tracing-subscriber = { version = "0.3", optional = true }
+reqwest = { version = "0.12", features = ["blocking", "json"], optional = true }
 
 [dev-dependencies]
 criterion = { version = "0.5", features = ["html_reports"] }
@@ -34,7 +35,8 @@ file = []
 syslog = ["dep:syslog"]
 tracing = ["dep:tracing", "dep:tracing-core", "dep:tracing-subscriber"]
 async = []
-full = ["color", "json", "file", "syslog", "tracing", "async"]
+x_grok = ["dep:reqwest", "json"]
+full = ["color", "json", "file", "syslog", "tracing", "async", "x_grok"]
 
 [[example]]
 name = "basic"
@@ -57,3 +59,8 @@ path = "examples/env_config.rs"
 [[bench]]
 name = "logging_bench"
 harness = false
+
+[[example]]
+name = "x_grok_sink"
+path = "examples/x_grok_sink.rs"
+required-features = ["x_grok", "async"]
