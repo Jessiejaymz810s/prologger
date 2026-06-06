@@ -224,6 +224,13 @@ impl ProLoggerBuilder {
         self
     }
 
+    /// Adds an xAI Grok sink.
+    #[cfg(feature = "x_grok")]
+    pub fn with_x_grok(mut self, api_key: impl Into<String>) -> Self {
+        self.sinks.push(Box::new(crate::sink::x_grok::XGrokSink::new(api_key)));
+        self
+    }
+
     /// Makes the logger asynchronous, processing logs on a background thread.
     ///
     /// The `capacity` parameter determines how many log messages can be queued
