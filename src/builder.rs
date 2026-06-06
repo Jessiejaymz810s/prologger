@@ -45,6 +45,9 @@ pub struct ProLoggerBuilder {
     color_mode: ColorMode,
     #[cfg(not(feature = "color"))]
     _use_color: bool,
+
+    #[cfg(feature = "async")]
+    async_capacity: Option<usize>,
 }
 
 impl ProLoggerBuilder {
@@ -67,6 +70,9 @@ impl ProLoggerBuilder {
             color_mode: ColorMode::Auto,
             #[cfg(not(feature = "color"))]
             _use_color: false,
+
+            #[cfg(feature = "async")]
+            async_capacity: None,
         }
     }
 
@@ -208,6 +214,26 @@ impl ProLoggerBuilder {
         self
     }
 
+    /// Adds a syslog sink.
+    #[cfg(feature = "syslog")]
+    pub fn with_syslog(mut self, process_name: &str) -> Self {
+        match crate::sink::syslog::SyslogSink::new(process_name.to_string()) {
+            Ok(sink) => self.sinks.push(Box::new(sink)),
+            Err(e) => eprintln!("[prologger] failed to init syslog: {}", e),
+        }
+        self
+    }
+
+    /// Makes the logger asynchronous, processing logs on a background thread.
+    ///
+    /// The `capacity` parameter determines how many log messages can be queued
+    /// before dropping new messages. A good default is `10_000`.
+    #[cfg(feature = "async")]
+    pub fn with_async(mut self, capacity: usize) -> Self {
+        self.async_capacity = Some(capacity);
+        self
+    }
+
     /// Builds the configured `ProLogger`.
     ///
     /// If no sinks have been configured, a default console sink is added
@@ -235,10 +261,19 @@ impl ProLoggerBuilder {
             filter = filter.with_module(&module, level);
         }
 
+        #[cfg(feature = "async")]
+        let sinks: Vec<Box<dyn Sink>> = if let Some(capacity) = self.async_capacity {
+            vec![Box::new(crate::sink::async_sink::AsyncSink::new(self.sinks, capacity))]
+        } else {
+            self.sinks
+        };
+        #[cfg(not(feature = "async"))]
+        let sinks = self.sinks;
+
         ProLogger {
             filter,
             formatter,
-            sinks: self.sinks,
+            sinks,
         }
     }
 

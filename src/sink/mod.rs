@@ -7,6 +7,10 @@
 pub mod console;
 #[cfg(feature = "file")]
 pub mod file;
+#[cfg(feature = "async")]
+pub mod async_sink;
+#[cfg(feature = "syslog")]
+pub mod syslog;
 
 use crate::formatter::Format;
 use log::Record;
