@@ -1,7 +1,7 @@
 //! Integration tests for prologger.
 
-use prologger::*;
 use log::LevelFilter;
+use prologger::*;
 
 #[test]
 fn test_builder_creates_logger() {
@@ -85,10 +85,7 @@ fn test_rotating_file_sink() {
     let log_path = dir.join("test.log");
 
     let logger = ProLoggerBuilder::new()
-        .with_rotating_file(
-            log_path.to_str().unwrap(),
-            RotationConfig::new(1000, 3),
-        )
+        .with_rotating_file(log_path.to_str().unwrap(), RotationConfig::new(1000, 3))
         .build();
 
     assert!(format!("{:?}", logger).contains("sinks_count: 1"));
@@ -100,7 +97,7 @@ fn test_rotating_file_sink() {
 fn test_multi_sink() {
     let logger = ProLoggerBuilder::new()
         .with_console_default()
-        .with_console_default()  // Two console sinks
+        .with_console_default() // Two console sinks
         .build();
 
     assert!(format!("{:?}", logger).contains("sinks_count: 2"));

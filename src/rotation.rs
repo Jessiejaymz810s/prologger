@@ -33,7 +33,10 @@ impl RotationConfig {
     /// let config = RotationConfig::new(10_000_000, 5);
     /// ```
     pub fn new(max_size: u64, max_files: usize) -> Self {
-        Self { max_size, max_files }
+        Self {
+            max_size,
+            max_files,
+        }
     }
 
     /// Creates a config that rotates at the given megabyte threshold.

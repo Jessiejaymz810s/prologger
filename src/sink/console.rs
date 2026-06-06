@@ -20,8 +20,6 @@ pub enum ConsoleTarget {
     Mixed,
 }
 
-
-
 /// A sink that writes formatted log output to the console.
 #[derive(Debug)]
 pub struct ConsoleSink {
@@ -63,10 +61,7 @@ impl Sink for ConsoleSink {
         let use_stderr = match self.target {
             ConsoleTarget::Stdout => false,
             ConsoleTarget::Stderr => true,
-            ConsoleTarget::Mixed => matches!(
-                record.level(),
-                log::Level::Error | log::Level::Warn
-            ),
+            ConsoleTarget::Mixed => matches!(record.level(), log::Level::Error | log::Level::Warn),
         };
 
         if use_stderr {

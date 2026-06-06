@@ -78,7 +78,7 @@ impl Format for PrettyFormatter {
         if self.use_color {
             #[cfg(feature = "color")]
             {
-                use crate::color::{AnsiColor, colorize};
+                use crate::color::{colorize, AnsiColor};
                 let ts = colorize(&timestamp, AnsiColor::GRAY, false);
                 let tgt = colorize(&format!("[{}]", target), AnsiColor::CYAN, false);
                 return format!("{} {} {} {}\n", ts, level, tgt, message);
