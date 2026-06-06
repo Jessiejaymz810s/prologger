@@ -59,6 +59,8 @@ pub mod logger;
 #[cfg(feature = "file")]
 pub mod rotation;
 pub mod sink;
+#[cfg(feature = "tracing")]
+pub mod tracing_layer;
 
 // ─── Re-exports ───────────────────────────────────────────────────────────
 
@@ -70,6 +72,8 @@ pub use formatter::FormatterType;
 pub use logger::ProLogger;
 #[cfg(feature = "file")]
 pub use rotation::RotationConfig;
+#[cfg(feature = "tracing")]
+pub use tracing_layer::ProloggerLayer;
 
 // Re-export log crate essentials for convenience
 pub use log::{self, Level, LevelFilter};
