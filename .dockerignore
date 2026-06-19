@@ -7,7 +7,6 @@ npm
 node_modules
 *.md
 !README.md
-LICENSE
 CONTRIBUTING.md
 SECURITY.md
 .gitignore

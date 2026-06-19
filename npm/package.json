@@ -1,6 +1,6 @@
 {
   "name": "@jessiejaymz810s/prologger",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "A production-grade, ergonomic Rust logging library with colored output, file rotation, and structured formatting. This npm package provides metadata and documentation for the prologger Rust crate.",
   "main": "index.js",
   "repository": {
