@@ -1,0 +1,29 @@
+{
+  "name": "@jessiejaymz810s/prologger",
+  "version": "0.3.0",
+  "description": "A production-grade, ergonomic Rust logging library with colored output, file rotation, and structured formatting. This npm package provides metadata and documentation for the prologger Rust crate.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jessiejaymz810s/prologger.git"
+  },
+  "keywords": [
+    "rust",
+    "logging",
+    "logger",
+    "prologger",
+    "structured-logging",
+    "file-rotation",
+    "colored-output",
+    "log-crate"
+  ],
+  "author": "Jessiejaymz810s",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jessiejaymz810s/prologger/issues"
+  },
+  "homepage": "https://github.com/Jessiejaymz810s/prologger#readme",
+  "publishConfig": {
+    "@jessiejaymz810s:registry": "https://npm.pkg.github.com"
+  }
+}

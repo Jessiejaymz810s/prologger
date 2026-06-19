@@ -34,11 +34,21 @@ impl Sink for SyslogSink {
         let formatted = formatter.format(record);
         if let Ok(mut logger) = self.logger.lock() {
             match record.level() {
-                log::Level::Error => { let _ = logger.err(formatted); }
-                log::Level::Warn => { let _ = logger.warning(formatted); }
-                log::Level::Info => { let _ = logger.info(formatted); }
-                log::Level::Debug => { let _ = logger.debug(formatted); }
-                log::Level::Trace => { let _ = logger.debug(formatted); } // syslog has no trace
+                log::Level::Error => {
+                    let _ = logger.err(formatted);
+                }
+                log::Level::Warn => {
+                    let _ = logger.warning(formatted);
+                }
+                log::Level::Info => {
+                    let _ = logger.info(formatted);
+                }
+                log::Level::Debug => {
+                    let _ = logger.debug(formatted);
+                }
+                log::Level::Trace => {
+                    let _ = logger.debug(formatted);
+                } // syslog has no trace
             };
         }
     }

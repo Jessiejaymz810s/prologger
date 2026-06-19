@@ -1,6 +1,6 @@
 //! X/Grok API Sink.
 //!
-//! Sends log records to the xAI Grok API. 
+//! Sends log records to the xAI Grok API.
 //! **Note:** It is highly recommended to wrap this sink in an `AsyncSink`
 //! (if the `async` feature is enabled) to prevent blocking the application thread
 //! during HTTP requests.
@@ -30,7 +30,7 @@ impl XGrokSink {
 impl Sink for XGrokSink {
     fn write(&self, record: &Record, formatter: &dyn Format) {
         let formatted = formatter.format(record);
-        
+
         let payload = json!({
             "model": "grok-2",
             "messages": [
@@ -47,7 +47,9 @@ impl Sink for XGrokSink {
 
         // Send the HTTP request blocking
         // Note: For high-throughput logging, this sink should be wrapped in `AsyncSink`.
-        let _ = self.client.post("https://api.x.ai/v1/chat/completions")
+        let _ = self
+            .client
+            .post("https://api.x.ai/v1/chat/completions")
             .header("Authorization", format!("Bearer {}", self.api_key))
             .json(&payload)
             .send();
