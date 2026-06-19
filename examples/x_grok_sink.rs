@@ -32,11 +32,11 @@ fn main() {
     warn!("You can also send warnings to the analyzer.");
     error!("Critical errors can be ingested and analyzed silently.");
 
-    // Because the sink runs in a background thread, we need to wait a moment 
+    // Because the sink runs in a background thread, we need to wait a moment
     // for the HTTP requests to complete before the program exits and drops the channel.
     // (In a real long-running server, this isn't necessary, but for a short example it is).
     println!("Waiting a few seconds for logs to be sent to xAI...");
     std::thread::sleep(Duration::from_secs(3));
-    
+
     println!("Done!");
 }

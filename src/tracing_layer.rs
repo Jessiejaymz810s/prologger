@@ -60,7 +60,7 @@ impl tracing_core::field::Visit for FieldVisitor {
 impl<S: Subscriber> Layer<S> for ProloggerLayer {
     fn on_event(&self, event: &Event<'_>, _ctx: Context<'_, S>) {
         let level = tracing_to_log_level(event.metadata().level());
-        
+
         let metadata = log::Metadata::builder()
             .level(level)
             .target(event.metadata().target())

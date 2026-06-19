@@ -4,11 +4,11 @@
 //! Multiple sinks can be active simultaneously to send logs to
 //! different destinations.
 
+#[cfg(feature = "async")]
+pub mod async_sink;
 pub mod console;
 #[cfg(feature = "file")]
 pub mod file;
-#[cfg(feature = "async")]
-pub mod async_sink;
 #[cfg(feature = "syslog")]
 pub mod syslog;
 #[cfg(feature = "x_grok")]
