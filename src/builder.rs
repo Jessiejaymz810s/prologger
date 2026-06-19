@@ -227,7 +227,8 @@ impl ProLoggerBuilder {
     /// Adds an xAI Grok sink.
     #[cfg(feature = "x_grok")]
     pub fn with_x_grok(mut self, api_key: impl Into<String>) -> Self {
-        self.sinks.push(Box::new(crate::sink::x_grok::XGrokSink::new(api_key)));
+        self.sinks
+            .push(Box::new(crate::sink::x_grok::XGrokSink::new(api_key)));
         self
     }
 
@@ -270,7 +271,9 @@ impl ProLoggerBuilder {
 
         #[cfg(feature = "async")]
         let sinks: Vec<Box<dyn Sink>> = if let Some(capacity) = self.async_capacity {
-            vec![Box::new(crate::sink::async_sink::AsyncSink::new(self.sinks, capacity))]
+            vec![Box::new(crate::sink::async_sink::AsyncSink::new(
+                self.sinks, capacity,
+            ))]
         } else {
             self.sinks
         };
