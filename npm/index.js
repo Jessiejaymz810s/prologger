@@ -29,12 +29,14 @@
  * @license MIT
  */
 
+const pkg = require("./package.json");
+
 module.exports = {
-  name: "prologger",
-  version: "0.3.0",
+  name: pkg.name,
+  version: pkg.version,
   language: "rust",
   registry: "https://crates.io/crates/prologger",
   documentation: "https://docs.rs/prologger",
   repository: "https://github.com/Jessiejaymz810s/prologger",
-  install: 'Add to Cargo.toml: prologger = "0.3"',
+  install: `Add to Cargo.toml: prologger = "${pkg.version}"`,
 };
